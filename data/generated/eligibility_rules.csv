@@ -1,0 +1,2 @@
+rule_id,min_risk_score,max_cost_margin_pct,active_only,cooldown_days
+RULE-2026-000001,35,0.3,True,90

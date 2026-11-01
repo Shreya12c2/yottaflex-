@@ -1,0 +1,36 @@
+{
+  "customers": 20000,
+  "observed_churned": 1947,
+  "overall_observed_churn_rate": 0.0974,
+  "experiment": {
+    "treatment": {
+      "customers": 2387,
+      "churn_rate": 0.129,
+      "retention_rate": 0.871
+    },
+    "control": {
+      "customers": 2388,
+      "churn_rate": 0.1679,
+      "retention_rate": 0.8321
+    }
+  },
+  "incremental_retention_lift": 0.0389,
+  "realized_offer_cost_total": 8301.0,
+  "metric_quality": {
+    "valid_churn_outcomes": 19999,
+    "invalid_churn_records_excluded": 1,
+    "duplicate_churn_records_excluded": 0,
+    "experiment_customers_excluded_for_group_leakage": 2,
+    "duplicate_cost_attributions_excluded": 1,
+    "invalid_cost_records_excluded": 0,
+    "nonresponse_outcomes_excluded_from_offer_cost": 602,
+    "unique_responded_treatment_contacts_with_cost": 1787
+  },
+  "validation_issue_count": 4,
+  "validation_issue_types": [
+    "churn_before_prediction",
+    "multiple_offer_attribution",
+    "offer_to_ineligible_customer",
+    "treatment_control_leakage"
+  ]
+}

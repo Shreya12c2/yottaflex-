@@ -1,0 +1,5 @@
+offer_id,offer_type,discount_pct,duration_months,estimated_cost,active
+OFF-2026-000001,discount,20,3,3.0,True
+OFF-2026-000002,bonus_data,0,2,5.0,True
+OFF-2026-000003,loyalty_credit,10,1,8.0,True
+OFF-2026-000004,control_holdout,0,0,0.0,True

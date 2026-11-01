@@ -1,0 +1,9 @@
+[
+  {
+    "rule_id": "RULE-2026-000001",
+    "min_risk_score": 35,
+    "max_cost_margin_pct": 0.3,
+    "active_only": true,
+    "cooldown_days": 90
+  }
+]

@@ -1,0 +1,123 @@
+{
+  "project": "YottaFlex Churn and Retention Pipeline",
+  "manifest_version": "1.1",
+  "generated_at_utc": "2026-10-31T20:29:11.099666+00:00",
+  "data_provenance": {
+    "data_type": "synthetic",
+    "external_data_used": false,
+    "source_description": "Records are generated programmatically by the project's synthetic data generator. No external customer records or personally identifiable information are used.",
+    "generator_module": "churn_retention.generator",
+    "random_seed": 20261022,
+    "customer_count_requested": 20000,
+    "months_requested": 18,
+    "prediction_date": "2026-07-01",
+    "horizon_end": "2026-09-29"
+  },
+  "generation_parameters": {
+    "seed": 20261022,
+    "customers": 20000,
+    "months": 18
+  },
+  "tables": {
+    "customers": {
+      "record_count": 20000,
+      "csv_file": "customers.csv",
+      "json_file": "customers.json"
+    },
+    "subscriptions": {
+      "record_count": 20000,
+      "csv_file": "subscriptions.csv",
+      "json_file": "subscriptions.json"
+    },
+    "subscription_history": {
+      "record_count": 22270,
+      "csv_file": "subscription_history.csv",
+      "json_file": "subscription_history.json"
+    },
+    "usage_snapshots": {
+      "record_count": 360000,
+      "csv_file": "usage_snapshots.csv",
+      "json_file": "usage_snapshots.json"
+    },
+    "billing_events": {
+      "record_count": 394765,
+      "csv_file": "billing_events.csv",
+      "json_file": "billing_events.json"
+    },
+    "support_cases": {
+      "record_count": 20555,
+      "csv_file": "support_cases.csv",
+      "json_file": "support_cases.json"
+    },
+    "offers": {
+      "record_count": 4,
+      "csv_file": "offers.csv",
+      "json_file": "offers.json"
+    },
+    "eligibility_rules": {
+      "record_count": 1,
+      "csv_file": "eligibility_rules.csv",
+      "json_file": "eligibility_rules.json"
+    },
+    "campaign_contacts": {
+      "record_count": 4780,
+      "csv_file": "campaign_contacts.csv",
+      "json_file": "campaign_contacts.json"
+    },
+    "churn_outcomes": {
+      "record_count": 20000,
+      "csv_file": "churn_outcomes.csv",
+      "json_file": "churn_outcomes.json"
+    },
+    "retention_outcomes": {
+      "record_count": 2390,
+      "csv_file": "retention_outcomes.csv",
+      "json_file": "retention_outcomes.json"
+    }
+  },
+  "feature_snapshot": {
+    "record_count": 20000,
+    "csv_file": "data/generated/features.csv",
+    "json_file": "data/generated/features.json",
+    "prediction_date": "2026-07-01",
+    "temporal_rule": "Behavioral features are calculated using records dated strictly before the prediction date.",
+    "fields": [
+      "customer_id",
+      "prediction_date",
+      "risk_score",
+      "risk_category",
+      "usage_decline_pct",
+      "failed_payments",
+      "support_cases",
+      "monthly_margin",
+      "pre_period_avg_usage"
+    ]
+  },
+  "ground_truth": {
+    "csv_file": "data/ground_truth/ground_truth.csv",
+    "json_file": "data/ground_truth/ground_truth.json",
+    "record_count": 4,
+    "purpose": "Contains labels for deliberately injected data-quality anomalies. It is separate from model input features."
+  },
+  "validation": {
+    "issue_count": 4,
+    "passed": false,
+    "detected_issue_types": [
+      "churn_before_prediction",
+      "multiple_offer_attribution",
+      "offer_to_ineligible_customer",
+      "treatment_control_leakage"
+    ]
+  },
+  "database": {
+    "sqlite_file": "outputs/churn_retention.db",
+    "schema_file": "outputs/schema.sql",
+    "seed_file": "outputs/seed_data.sql"
+  },
+  "limitations": [
+    "The dataset is synthetic and does not represent real customers.",
+    "Retention and churn outcomes are simulated using generator rules.",
+    "Experiment metrics are illustrative and do not establish real-world causal effectiveness.",
+    "The feature snapshot contains pre-prediction behavioral features; ground-truth anomaly labels are not included."
+  ]
+}

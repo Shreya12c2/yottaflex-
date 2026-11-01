@@ -1,0 +1,5 @@
+issue_id,issue_type,entity,record_id,expected_detection
+GT-001,churn_before_prediction,ChurnOutcome,CHURN-CUS-000001-2026,churn_date must be on/after prediction_date
+GT-002,offer_to_ineligible_customer,CampaignContact,CONTACT-004778,risk score below eligibility threshold
+GT-003,treatment_control_leakage,CampaignContact,CONTACT-004779,customer assigned to both experiment groups
+GT-004,multiple_offer_attribution,RetentionOutcome,RET-022390,customer has multiple retention attributions

@@ -1,0 +1,30 @@
+[
+  {
+    "issue_id": "GT-001",
+    "issue_type": "churn_before_prediction",
+    "entity": "ChurnOutcome",
+    "record_id": "CHURN-CUS-000001-2026",
+    "expected_detection": "churn_date must be on/after prediction_date"
+  },
+  {
+    "issue_id": "GT-002",
+    "issue_type": "offer_to_ineligible_customer",
+    "entity": "CampaignContact",
+    "record_id": "CONTACT-004778",
+    "expected_detection": "risk score below eligibility threshold"
+  },
+  {
+    "issue_id": "GT-003",
+    "issue_type": "treatment_control_leakage",
+    "entity": "CampaignContact",
+    "record_id": "CONTACT-004779",
+    "expected_detection": "customer assigned to both experiment groups"
+  },
+  {
+    "issue_id": "GT-004",
+    "issue_type": "multiple_offer_attribution",
+    "entity": "RetentionOutcome",
+    "record_id": "RET-022390",
+    "expected_detection": "customer has multiple retention attributions"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "passed": false,
+  "issue_count": 4,
+  "issues": [
+    {
+      "issue_type": "churn_before_prediction",
+      "entity": "ChurnOutcome",
+      "record_id": "CHURN-CUS-000001-2026",
+      "detail": "Churn date precedes prediction date"
+    },
+    {
+      "issue_type": "offer_to_ineligible_customer",
+      "entity": "CampaignContact",
+      "record_id": "CONTACT-004778",
+      "detail": "Customer does not satisfy minimum churn-risk eligibility"
+    },
+    {
+      "issue_type": "treatment_control_leakage",
+      "entity": "CampaignContact",
+      "record_id": "CUS-011799",
+      "detail": "CMP-2026-000001: ['control', 'treatment']"
+    },
+    {
+      "issue_type": "multiple_offer_attribution",
+      "entity": "RetentionOutcome",
+      "record_id": "CUS-000001",
+      "detail": "2 retained attributions"
+    }
+  ]
+}
